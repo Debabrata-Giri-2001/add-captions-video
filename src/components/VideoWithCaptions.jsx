@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactPlayer from 'react-player/youtube';
 
-// Utility function to convert time "HH:MM:SS" to seconds
+// convert time "HH:MM:SS" to seconds
 const timeToSeconds = (timeString) => {
   const [hours, minutes, seconds] = timeString.split(':').map(Number);
   return hours * 3600 + minutes * 60 + seconds;
 };
 
-// Utility function to convert seconds to "HH:MM:SS"
+// convert seconds to "HH:MM:SS"
 const secondsToTime = (seconds) => {
   const h = Math.floor(seconds / 3600).toString().padStart(2, '0');
   const m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
@@ -83,7 +83,7 @@ function VideoWithCaptions() {
             url={videoUrl}
             controls
             playing={false}
-            onProgress={handleProgress} // Updates the current time
+            onProgress={handleProgress}
             width="100%"
           />
         </div>
